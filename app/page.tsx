@@ -8,7 +8,7 @@ export default function SolarSystemsSwedish() {
     <div className="min-h-screen text-gray-800">
       <div className="container mx-auto px-4 sm:px-6 ">
         {/* Hero Section */}
-        <div className="min-h-[400px] md:h-[600px] h-[700px] p-4 rounded-2xl shadow-sm relative overflow-hidden my-4 border">
+        <div className="min-h-[400px] md:h-[600px] h-[700px] p-4 rounded-2xl relative overflow-hidden my-4">
           <div className="floating-circle w-full md:w-[800px] h-[800px] rounded-full blur-3xl bg-[#ffa916] opacity-50"></div>
 
           <div className="absolute inset-0 p-4 md:p-20">

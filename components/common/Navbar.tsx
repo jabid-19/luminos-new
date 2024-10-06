@@ -39,13 +39,13 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-10 z-50 container mx-auto rounded-full shadow-sm backdrop-blur-xl bg-white/30">
+    <nav className="sticky top-10 z-50 container mx-auto rounded-full backdrop-blur-xl bg-white/30">
       <div className="max-w-[1800px]">
         <div className="flex items-center justify-between px-8 py-4 text-base">
           <div>
             <Link href="/" aria-label="Luminos">
               <Image
-                width={100}
+                width={120}
                 height={28}
                 src="/images/luminos-logo-pos.svg"
                 alt="logo"

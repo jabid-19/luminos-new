@@ -195,7 +195,7 @@ export default function ReferencesPage() {
                 {installations[type].map((installation, index) => (
                   <Card
                     key={index}
-                    className="group hover:shadow-lg transition-shadow"
+                    className="group shadow-none hover:shadow-lg transition-shadow"
                   >
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
