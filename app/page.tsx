@@ -154,7 +154,7 @@ export default function SolarSystemsSwedish() {
           </div>
         </section>
 
-        <section className="relative py-12 md:py-20 mb-20 md:mb-40 px-4 md:px-10 bg-gradient-to-b to-white rounded-xl from-yellow-300 flex items-center justify-center overflow-hidden">
+        <section className="relative py-12 md:py-20 mb-20 md:mb-40 px-4 md:px-10 bg-gradient-to-b to-white rounded-xl from-yellow-500 flex items-center justify-center overflow-hidden">
           <div className="container mx-auto px-2 md:px-4 text-center z-10 relative">
             <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-yellow-600">
               Framtidssäkra Din Energiförsörjning
