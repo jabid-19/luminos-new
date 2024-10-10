@@ -1,27 +1,51 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sun, Battery, Zap } from "lucide-react";
 import Image from "next/image";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function SolarSystemsSwedish() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-out",
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen text-gray-800">
-      <div className="container mx-auto px-4 sm:px-6 ">
+    <div className="min-h-screen text-gray-800 ">
+      <div className="floating-circle w-full md:w-[800px] h-[800px] rounded-full blur-3xl bg-[#ffa916] opacity-50"></div>
+
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Hero Section */}
         <div className="min-h-[400px] md:h-[600px] h-[700px] p-4 rounded-2xl relative overflow-hidden my-4">
-          <div className="floating-circle w-full md:w-[800px] h-[800px] rounded-full blur-3xl bg-[#ffa916] opacity-50"></div>
-
           <div className="absolute inset-0 p-4 md:p-20">
             <section className="text-center mb-8 md:mb-16 flex flex-col items-center z-20">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-yellow-800 max-w-4xl">
+              <h1
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-yellow-800 max-w-4xl"
+                data-aos="fade-down"
+              >
                 Framtidens Energi Börjar Här
               </h1>
-              <p className="text-base sm:text-lg mb-6 md:mb-8 text-yellow-700 max-w-4xl px-2">
+              <p
+                className="text-base sm:text-lg mb-6 md:mb-8 text-yellow-700 max-w-4xl px-2"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 Upptäck kraften i solenergi med våra moderna solpaneler och
                 batterilagringslösningar. Hållbar energi för ditt hem och din
                 framtid.
               </p>
-              <Button className="bg-primary text-white hover:bg-yellow-600 rounded-full w-full sm:w-auto">
+              <Button
+                className="bg-primary text-white hover:bg-yellow-600 rounded-full w-full sm:w-auto"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
                 Boka Konsultation
               </Button>
             </section>
@@ -35,6 +59,8 @@ export default function SolarSystemsSwedish() {
                 <Card
                   key={index}
                   className="bg-white/60 shadow-none rounded-lg sm:rounded-none text-center border-none"
+                  data-aos="fade-up"
+                  data-aos-delay={200 + index * 100}
                 >
                   <CardHeader className="p-4 md:p-6">
                     <CardTitle className="text-xl md:text-2xl text-yellow-700">
@@ -54,17 +80,27 @@ export default function SolarSystemsSwedish() {
 
         <div className="bg-white text-gray-900 flex flex-col items-center py-16 md:py-32 mb-10">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 text-yellow-800">
+            <p
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 text-yellow-800"
+              data-aos="fade-down"
+            >
               Ledande inom Solenergi
             </p>
-            <p className="text-center mb-8 text-base md:text-lg text-yellow-800 px-2">
+            <p
+              className="text-center mb-8 text-base md:text-lg text-yellow-800 px-2"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               Vi är Sveriges ledande leverantör av solpaneler och
               energilagringslösningar. Med över ett decennium av erfarenhet
               erbjuder vi högkvalitativa solcellsinstallationer för både
-              privatpersoner och företag. Vårt mål är att göra övergången till
-              förnybar energi enkel och kostnadseffektiv för alla.
+              privatpersoner och företag.
             </p>
-            <div className="rounded-lg overflow-hidden shadow-lg">
+            <div
+              className="rounded-lg overflow-hidden shadow-lg"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
               <Image
                 src="/images/solar-panel.jpg"
                 alt="Solpaneler installation"
@@ -78,9 +114,12 @@ export default function SolarSystemsSwedish() {
 
         {/* Core Products Section */}
         <section className="mb-20 md:mb-40 px-2">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-yellow-800">
+          <p
+            className="text-2xl md:text-3xl font-bold mb-8 text-center text-yellow-800"
+            data-aos="fade-down"
+          >
             Våra Produkter
-          </h2>
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {[
               {
@@ -110,9 +149,11 @@ export default function SolarSystemsSwedish() {
             ].map((product, index) => (
               <Card
                 key={index}
-                className="bg-white border-yellow-400 shadow-none"
+                className="bg-white border-none shadow-none text-center"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
               >
-                <CardHeader className="p-4 md:p-6">
+                <CardHeader className="p-4 md:p-6 items-center">
                   <div className="mb-4">{product.icon}</div>
                   <CardTitle className="text-lg md:text-xl text-yellow-700">
                     {product.title}
@@ -130,10 +171,10 @@ export default function SolarSystemsSwedish() {
 
         {/* Call to Action Section */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 md:mb-40 px-2">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-800">
+          <div data-aos="fade-right">
+            <p className="text-2xl md:text-3xl font-bold mb-4 text-yellow-800">
               Börja Din Resa Mot Grön Energi
-            </h2>
+            </p>
             <p className="mb-6 text-yellow-700 text-sm md:text-base">
               Ta det första steget mot en mer hållbar framtid. Våra experter
               hjälper dig att hitta den perfekta solenergilösningen för ditt hem
@@ -143,7 +184,10 @@ export default function SolarSystemsSwedish() {
               Kontakta Oss
             </Button>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-lg mt-4 md:mt-0">
+          <div
+            className="rounded-lg overflow-hidden shadow-lg mt-4 md:mt-0"
+            data-aos="fade-left"
+          >
             <Image
               src="/images/solar-panel.jpg"
               alt="Solpaneler installation"
@@ -154,18 +198,29 @@ export default function SolarSystemsSwedish() {
           </div>
         </section>
 
-        <section className="relative py-12 md:py-20 mb-20 md:mb-40 px-4 md:px-10 bg-gradient-to-b to-white rounded-xl from-yellow-500 flex items-center justify-center overflow-hidden">
+        <section className="relative py-12 md:py-20 mb-20 md:mb-40 px-4 md:px-10 bg-gradient-to-b to-white rounded-xl flex items-center justify-center overflow-hidden">
           <div className="container mx-auto px-2 md:px-4 text-center z-10 relative">
-            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-yellow-600">
+            <p
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-yellow-600"
+              data-aos="fade-down"
+            >
               Framtidssäkra Din Energiförsörjning
             </p>
-            <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-8 text-yellow-600">
+            <p
+              className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-8 text-yellow-600"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               Med stigande energipriser har det aldrig varit ett bättre
               tillfälle att investera i solenergi. Låt oss hjälpa dig att ta
               kontrollen över dina energikostnader och bidra till en grönare
               planet.
             </p>
-            <Button className="bg-yellow-500 text-white hover:bg-yellow-600 rounded-full w-full sm:w-auto">
+            <Button
+              className="bg-yellow-500 text-white hover:bg-yellow-600 rounded-full w-full sm:w-auto"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
               Beräkna Din Besparing
             </Button>
           </div>

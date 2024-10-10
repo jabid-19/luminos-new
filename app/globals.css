@@ -22,7 +22,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  animation: float 20s infinite ease-in-out;
+  animation: float 18s infinite ease-in-out;
   /* z-index: -1; */
 }
 
@@ -31,13 +31,13 @@ body {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(60vw, 10vh); /* Move towards the right */
+    transform: translate(60vw, 60vh); /* Move towards the right */
   }
   50% {
     transform: translate(-50vw, 30vh); /* Move towards the left */
   }
   75% {
-    transform: translate(60vw, 40vh); /* Move diagonally */
+    transform: translate(60vw, 10vh); /* Move diagonally */
   }
   100% {
     transform: translate(0, 0); /* Return to the original position */

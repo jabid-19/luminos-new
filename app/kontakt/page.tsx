@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import { Mail, Phone, Building2, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ContactCardProps {
   name: string;
@@ -73,8 +77,16 @@ const CompanyInfo = () => (
 );
 
 const Page = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   return (
-    <div className=" relative">
+    <div className="relative">
       <div
         className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/90"
         style={{
@@ -94,7 +106,7 @@ const Page = () => {
       <div className="relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="space-y-16">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-down">
               <h1 className="text-5xl md:text-6xl font-bold text-[#fab300] mb-4 [text-shadow:_0_1px_12px_rgb(250_179_0_/_20%)]">
                 KONTAKT
               </h1>
@@ -104,7 +116,11 @@ const Page = () => {
             </div>
 
             {/* VD Card - Prominently displayed */}
-            <div className="flex justify-center">
+            <div
+              className="flex justify-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#fab300] via-yellow-500 to-[#fab300] rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
                 <ContactCard
@@ -117,34 +133,46 @@ const Page = () => {
             </div>
 
             {/* Other Contact Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-              <ContactCard
-                name="Fredrik Johansson"
-                title="Marknad"
-                phone="0733 83 01 01"
-                email="fredrik@luminos.se"
-              />
-              <ContactCard
-                name="Severin Martinov"
-                title="Projektsamordnare"
-                phone="0733 83 01 02"
-              />
-              <ContactCard
-                name="Gabriel Eriksson"
-                title="Marknad"
-                phone="0733 83 01 04"
-                email="gabriel@luminos.se"
-              />
-              <ContactCard
-                name="Ola Hörnelius"
-                title="Marknad"
-                phone="0733 83 01 03"
-                email="ola@luminos.se"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+              <div data-aos="fade-up" data-aos-delay="300">
+                <ContactCard
+                  name="Fredrik Johansson"
+                  title="Marknad"
+                  phone="0733 83 01 01"
+                  email="fredrik@luminos.se"
+                />
+              </div>
+              <div data-aos="fade-up" data-aos-delay="400">
+                <ContactCard
+                  name="Severin Martinov"
+                  title="Projektsamordnare"
+                  phone="0733 83 01 02"
+                />
+              </div>
+              <div data-aos="fade-up" data-aos-delay="500">
+                <ContactCard
+                  name="Gabriel Eriksson"
+                  title="Marknad"
+                  phone="0733 83 01 04"
+                  email="gabriel@luminos.se"
+                />
+              </div>
+              <div data-aos="fade-up" data-aos-delay="600">
+                <ContactCard
+                  name="Ola Hörnelius"
+                  title="Marknad"
+                  phone="0733 83 01 03"
+                  email="ola@luminos.se"
+                />
+              </div>
             </div>
 
             {/* Company Info */}
-            <div className="flex justify-center">
+            <div
+              className="flex justify-center"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
               <CompanyInfo />
             </div>
           </div>

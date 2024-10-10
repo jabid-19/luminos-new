@@ -1,3 +1,8 @@
+"use client";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -41,9 +46,18 @@ interface StatsCardProps {
   label: string;
   value: string;
   icon: React.ComponentType<{ className?: string }>;
+  delay?: number;
 }
 
 export default function ReferencesPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   const installations: Installations = {
     roof: [
       {
@@ -121,8 +135,13 @@ export default function ReferencesPage() {
     label,
     value,
     icon: Icon,
+    delay = 0,
   }) => (
-    <div className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm">
+    <div
+      data-aos="fade-up"
+      data-aos-delay={delay}
+      className="flex items-center gap-3 bg-white rounded-lg p-4 shadow-sm"
+    >
       <div className="p-2 bg-yellow-50 rounded-full">
         <Icon className="h-5 w-5 text-yellow-600" />
       </div>
@@ -134,14 +153,22 @@ export default function ReferencesPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen pb-20">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-yellow-500 to-amber-600 text-white py-20">
+      <div className="text-yellow-800 bg-gradient-to-b from-amber-500 to-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-6 text-center">
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-6 text-center"
+            data-aos="zoom-out"
+            data-aos-duration="1500"
+          >
             Våra Framgångsrika Projekt
           </h1>
-          <p className="text-xl mb-12 text-center max-w-3xl mx-auto opacity-90">
+          <p
+            className="text-xl mb-12 text-center max-w-3xl mx-auto opacity-90"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             Upptäck hur vi transformerar Sveriges energilandskap genom
             innovativa solenergi- och batterilösningar
           </p>
@@ -152,17 +179,25 @@ export default function ReferencesPage() {
               label="Total Installerad Effekt"
               value="5+ MW"
               icon={Zap}
+              delay={0}
             />
             <StatsCard
               label="Genomförda Projekt"
               value="50+"
               icon={Building2}
+              delay={100}
             />
-            <StatsCard label="Batterilösningar" value="20+" icon={Battery} />
+            <StatsCard
+              label="Batterilösningar"
+              value="20+"
+              icon={Battery}
+              delay={200}
+            />
             <StatsCard
               label="CO₂ Besparing/År"
               value="2000+ ton"
               icon={BarChart}
+              delay={300}
             />
           </div>
         </div>
@@ -170,7 +205,10 @@ export default function ReferencesPage() {
 
       <main className="container mx-auto px-4 py-12">
         <Tabs defaultValue="roof" className="w-full">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
+          <TabsList
+            className="grid w-full max-w-md mx-auto grid-cols-2"
+            data-aos="fade-up"
+          >
             <TabsTrigger
               value="roof"
               className="data-[state=active]:bg-yellow-500 data-[state=active]:text-white"
@@ -195,7 +233,9 @@ export default function ReferencesPage() {
                 {installations[type].map((installation, index) => (
                   <Card
                     key={index}
-                    className="group shadow-none hover:shadow-lg transition-shadow"
+                    className="group shadow-none"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
                   >
                     <CardHeader>
                       <CardTitle className="flex items-center justify-between">
@@ -250,7 +290,10 @@ export default function ReferencesPage() {
                   </Card>
                 ))}
               </div>
-              <p className="mt-8 text-gray-700 text-center max-w-2xl mx-auto">
+              <p
+                className="mt-8 text-gray-700 text-center max-w-2xl mx-auto"
+                data-aos="fade-up"
+              >
                 {type === "roof"
                   ? "Våra takinstallationer har hjälpt företag att minska sina energikostnader med upp till 40% och säkrat deras energiförsörjning för framtiden."
                   : "Våra markinstallationer levererar storskalig förnybar energi som driver Sveriges gröna omställning framåt."}

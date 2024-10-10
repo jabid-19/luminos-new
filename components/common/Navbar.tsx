@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -116,18 +116,16 @@ export const Navbar = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="flex items-center gap-1 cursor-pointer">
-                <p
-                  className={`${
-                    pathname === "/om-oss" ||
-                    pathname === "/kontakt" ||
-                    pathname === "/gdpr"
-                      ? "text-[#fab300]"
-                      : "text-[#1a212d]"
-                  } text-base`}
-                >
-                  Om Luminos
-                </p>
+              <div
+                className={`flex items-center gap-1 cursor-pointer ${
+                  pathname === "/om-oss" ||
+                  pathname === "/kontakt" ||
+                  pathname === "/gdpr"
+                    ? "text-[#fab300]"
+                    : "text-[#1a212d]"
+                } text-base`}
+              >
+                <p>Om Luminos</p>
                 <ChevronDown className="w-4 h-4" />
               </div>
               {showDropdown && (
@@ -174,8 +172,9 @@ export const Navbar = () => {
             </li>
           </ul>
           <Link href="/kontakt" className="hidden lg:block">
-            <Button className="bg-black text-white hover:bg-gray-600 rounded-full">
+            <Button className="bg-black text-white hover:bg-gray-600 rounded-full px-5">
               Kontakt
+              <Phone className="h-4 w-4 ml-2 text-white" />
             </Button>
           </Link>
         </div>
