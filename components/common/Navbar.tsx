@@ -38,9 +38,23 @@ export const Navbar = () => {
     }, 150); // Small delay before hiding the dropdown
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offset = 100; // Adjust this value based on your navbar height
+      const elementPosition = section.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <nav className="sticky top-10 z-50 container mx-auto rounded-full backdrop-blur-xl bg-white/30">
-      <div className="max-w-[1800px]">
+    <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1800px] px-4 mx-auto rounded-full backdrop-blur-xl bg-white/30">
+      <div className="w-full">
         <div className="flex items-center justify-between px-8 py-4 text-base">
           <div>
             <Link href="/" aria-label="Luminos">
@@ -73,7 +87,10 @@ export const Navbar = () => {
           </div>
           <ul className="hidden items-center gap-9 text-[#1a212d] lg:flex">
             <li>
-              <Link href="/solpaneler">
+              <div
+                onClick={() => scrollToSection("solar")}
+                className="cursor-pointer"
+              >
                 <p
                   className={`${
                     pathname === "/solpaneler"
@@ -83,10 +100,13 @@ export const Navbar = () => {
                 >
                   Solpaneler
                 </p>
-              </Link>
+              </div>
             </li>
             <li>
-              <Link href="/batterier">
+              <div
+                onClick={() => scrollToSection("battery")}
+                className="cursor-pointer"
+              >
                 <p
                   className={`${
                     pathname === "/batterier"
@@ -96,10 +116,13 @@ export const Navbar = () => {
                 >
                   Batterier
                 </p>
-              </Link>
+              </div>
             </li>
             <li>
-              <Link href="/referenser">
+              <div
+                onClick={() => scrollToSection("references")}
+                className="cursor-pointer"
+              >
                 <p
                   className={`${
                     pathname === "/referenser"
@@ -109,7 +132,23 @@ export const Navbar = () => {
                 >
                   Referenser
                 </p>
-              </Link>
+              </div>
+            </li>
+            <li>
+              <div
+                onClick={() => scrollToSection("gdpr")}
+                className="cursor-pointer"
+              >
+                <p
+                  className={`${
+                    pathname === "/referenser"
+                      ? "text-[#fab300]"
+                      : "text-[#1a212d]"
+                  } text-base`}
+                >
+                  GDPR
+                </p>
+              </div>
             </li>
             <li
               className="relative"
@@ -156,17 +195,6 @@ export const Navbar = () => {
                       Kontakt
                     </p>
                   </Link>
-                  <Link href="/gdpr">
-                    <p
-                      className={`${
-                        pathname === "/gdpr"
-                          ? "text-[#fab300]"
-                          : "text-[#1a212d]"
-                      } text-base px-4 py-2 hover:bg-gray-100`}
-                    >
-                      GDPR
-                    </p>
-                  </Link>
                 </div>
               )}
             </li>
@@ -185,7 +213,10 @@ export const Navbar = () => {
         >
           <ul className="flex flex-col gap-4 p-4 text-[#1a212d]">
             <li>
-              <Link href="/solpaneler">
+              <div
+                onClick={() => scrollToSection("solar")}
+                className="cursor-pointer"
+              >
                 <p
                   className={`${
                     pathname === "/solpaneler"
@@ -195,10 +226,13 @@ export const Navbar = () => {
                 >
                   Solpaneler
                 </p>
-              </Link>
+              </div>
             </li>
             <li>
-              <Link href="/batterier">
+              <div
+                onClick={() => scrollToSection("battery")}
+                className="cursor-pointer"
+              >
                 <p
                   className={`${
                     pathname === "/batterier"
@@ -208,10 +242,13 @@ export const Navbar = () => {
                 >
                   Batterier
                 </p>
-              </Link>
+              </div>
             </li>
             <li>
-              <Link href="/referenser">
+              <div
+                onClick={() => scrollToSection("references")}
+                className="cursor-pointer"
+              >
                 <p
                   className={`${
                     pathname === "/referenser"
@@ -221,7 +258,21 @@ export const Navbar = () => {
                 >
                   Referenser
                 </p>
-              </Link>
+              </div>
+            </li>
+            <li className="ml-4">
+              <div
+                onClick={() => scrollToSection("gdpr")}
+                className="cursor-pointer"
+              >
+                <p
+                  className={`${
+                    pathname === "/gdpr" ? "text-[#fab300]" : "text-[#1a212d]"
+                  } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
+                >
+                  GDPR
+                </p>
+              </div>
             </li>
             <li>
               <Link href="/om-oss">
@@ -247,17 +298,7 @@ export const Navbar = () => {
                 </p>
               </Link>
             </li>
-            <li className="ml-4">
-              <Link href="/gdpr">
-                <p
-                  className={`${
-                    pathname === "/gdpr" ? "text-[#fab300]" : "text-[#1a212d]"
-                  } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
-                >
-                  GDPR
-                </p>
-              </Link>
-            </li>
+
             <li>
               <Button className="bg-yellow-500 text-white hover:bg-yellow-600 rounded-full">
                 Kontakt

@@ -1,216 +1,184 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import Image from "next/image";
+import { Sun, Users, Target, Zap, Battery, Cpu } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Battery, Sun, Wrench, Users, Phone } from "lucide-react";
 
-export default function HomePage() {
+export default function ModernAboutUs() {
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
-      easing: "ease-out-cubic",
     });
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <div className="text-yellow-800 bg-gradient-to-b from-amber-500 to-white py-20">
-        <div className="container mx-auto px-4">
-          <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
-            data-aos="fade-down"
-          >
-            Luminos Energi AB
+    <div className="min-h-screen">
+      <div
+        className="relative bg-cover bg-center md:h-[600px] flex items-center justify-center overflow-hidden"
+        style={{ backgroundImage: "url('/images/about.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
+
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-6xl font-semibold mb-4" data-aos="fade-down">
+            LUMINOS ENERGI AB
           </h1>
-          <p
-            className="text-xl opacity-90"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Formar framtidens hållbara energilösningar
+          <p className="text-2xl" data-aos="fade-up">
+            Framtidens energilösningar
           </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-20">
-        {/* Om Oss Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6" data-aos="fade-right">
-            Om Oss
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-4" data-aos="fade-up">
-              <p className="text-gray-700">
-                Luminos Energi AB, grundades år 2022 av Christian von Koch och
-                är en passionerad aktör inom den hållbara energibranschen. Med
-                huvudkontor i Stockholm och en dedikerad personal om sex
-                personer (oktober 2024) strävar vi efter att vara föregångare
-                inom förnybar energi och bidra till en grönare framtid för
-                kommande generationer.
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <section className="mb-20" data-aos="fade-up">
+          <h2 className="text-4xl font-semibold text-primary mb-8">Om Oss</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Luminos Energi grundades 2023 av Christian von Koch. Bolaget
+                utgår från en analysbaserad och strukturerad arbetsmodell
+                avseende förnybara energilösningar där kundens projektspecifika
+                förutsättningar samt förväntningar grundligt gås igenom innan vi
+                skräddarsyr varje enskilt projekt.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Vi tror på ett kundnära arbetssätt med hög grad av personlig
+                service för att på så sätt säkerställa högsta kvalitet och
+                kundnöjdhet. Vi ser också till att kontinuerligt ligga i
+                framkant med att hitta marknadens främsta produkter och
+                lösningar inom såväl teknik, material samt mjukvara.
               </p>
             </div>
-            <Card
-              className="shadow-none"
-              data-aos="fade-left"
-              data-aos-delay="200"
-            >
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Users className="h-6 w-6 text-amber-400" />
-                  Vårt Team
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc pl-4 space-y-1">
-                  <li>Christian von Koch - Grundare</li>
-                  <li>Gabriel Eriksson</li>
-                  <li>Severin Martinov</li>
-                  <li>Ola Hörnelius</li>
-                  <li>Fredrik Johansson</li>
-                  <li>Henrik Parksjö</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="relative h-64 md:h-full" data-aos="fade-left">
+              <Image
+                src="/images/about3.jpg"
+                alt="Luminos Energi team"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
           </div>
         </section>
 
-        {/* Produkter och Tjänster */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6" data-aos="fade-right">
-            Våra Produkter och Tjänster
+        <section className="mb-20" data-aos="fade-up">
+          <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
+            <Sun className="mr-4 text-yellow-500" /> Vår filosofi
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Sun,
-                title: "Solpanelsanläggningar",
-                content:
-                  "Vi levererar solpanelsanläggningar på både mark och tak över hela Sverige.",
-              },
-              {
-                icon: Battery,
-                title: "Batterilösningar",
-                content:
-                  "Nyckelfärdiga batterilösningar för lagring och stödtjänster mot Svenska Kraftnät.",
-              },
-              {
-                icon: Building2,
-                title: "Takomläggningar",
-                content:
-                  "Professionell takomläggning inför solpanelsinstallationer.",
-              },
-            ].map((item, index) => (
-              <Card
-                key={index}
-                className="shadow-none"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <item.icon className="h-6 w-6 text-amber-400" />
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">{item.content}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="bg-white rounded-lg">
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Luminos Energis grundfilosofi är rotad i vårt engagemang för att
+              medverka i omställningen till ett hållbart samhälle för kommande
+              generationer. Vi tror på kraften i grön energi, både ur ett
+              hållbarhets- och lönsamhetsperspektiv.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Vi strävar efter att alltid leverera högsta kvalitet och
+              professionell service till våra kunder redan från första kontakt
+              fram till installation, slutbesiktning och löpande service. Vi tar
+              hand om hela kedjan och via oss är det enkelt att ställa om er
+              verksamhet eller fastighet för framtiden.
+            </p>
           </div>
         </section>
 
-        {/* Service och Underhåll */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6" data-aos="fade-right">
-            Serviceavtal
+        <section className="mb-20" data-aos="fade-up">
+          <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
+            <Target className="mr-4 text-red-500" /> Målgrupp
           </h2>
-          <Card className="shadow-none" data-aos="fade-up">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Wrench className="h-6 w-6 text-amber-400" />
-                Omfattande Servicelösningar
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700">
-                Vi erbjuder serviceavtal för underhåll av solpanelsanläggningar
-                och batterisystem. Hos Luminos strävar vi efter att skapa en
-                komplett och långsiktig lösning för våra kunder.
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative h-64 md:h-full" data-aos="fade-right">
+              <Image
+                src="/images/about2.jpg"
+                alt="Corporate buildings"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+            </div>
+            <div>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Vår arbetsmodell lämpar sig bäst för företag, exempelvis
+                fastighetsbolag samt industrier, och vi tar därför inga uppdrag
+                från privatpersoner. Bland våra kunder återfinns flera större
+                noterade och onoterade bolag, Asset Managers samt välkända
+                industriföretag.
               </p>
-            </CardContent>
-          </Card>
+              <p className="text-gray-700 leading-relaxed">
+                Vi har via vårt strukturerade arbetssätt stor vana vid att
+                hantera större projektportföljer vilket är särskilt viktigt för
+                våra större fastighetskunder, där flera projekt ofta behöver
+                analyseras och genomföras samtidigt.
+              </p>
+            </div>
+          </div>
         </section>
 
-        {/* Varför Luminos */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6" data-aos="fade-right">
-            Varför Luminos Energi?
+        <section className="mb-20" data-aos="fade-up">
+          <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
+            <Zap className="mr-4 text-yellow-500" /> Våra Produkter och Tjänster
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Senaste teknologiska framstegen",
+                title: "Solcellsanläggningar",
+                icon: Sun,
                 description:
-                  "Vi omfamnar de senaste teknologiska framstegen för att säkerställa att våra kunder har tillgång till de mest avancerade och effektiva solcellslösningarna.",
+                  "Större anläggningar för mark- och takinstallationer.",
               },
               {
-                title: "Anpassade Tillvägagångssätt",
+                title: "Batterilösningar",
+                icon: Battery,
                 description:
-                  "Vår expertis möjliggör skräddarsydda lösningar baserade på dina specifika behov och krav.",
+                  "Nyckelfärdiga lösningar för lagring och energioptimering.",
               },
               {
-                title: "Framtidsinriktad Vision",
+                title: "AI-baserad Mjukvara",
+                icon: Cpu,
                 description:
-                  "På Luminos Energi ser vi fram emot en grönare framtid och strävar efter att ligga i framkant av solcell och batteriteknikens utveckling.",
+                  "Intelligent styrning för optimal energianvändning.",
               },
-            ].map((item, index) => (
-              <Card
+            ].map((service, index) => (
+              <div
                 key={index}
-                className="shadow-none"
-                data-aos="fade-up"
+                className="bg-white rounded-lg p-6 flex flex-col items-center text-center"
+                data-aos="flip-left"
                 data-aos-delay={index * 100}
               >
-                <CardHeader>
-                  <CardTitle>{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">{item.description}</p>
-                </CardContent>
-              </Card>
+                <service.icon className="w-16 h-16 text-primary mb-4" />
+                <h3 className="text-xl font-semisemibold mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* Kontakt Section */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold mb-6" data-aos="fade-up">
-            Kontakta Oss
+        <section className="mb-20" data-aos="fade-up">
+          <h2 className="text-4xl font-semibold text-primary mb-4 flex items-center">
+            <Users className="mr-4 text-primary" /> Vårt Team
           </h2>
-          <p
-            className="text-xl text-gray-700 mb-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Forma en hållbar energiframtid för ditt företag med Luminos Energi
-          </p>
-          <div
-            className="flex justify-center"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <button className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full transition-colors hover:bg-primary/90">
-              <Phone className="h-6 w-6 text-white" />
-              Kontakta oss idag
-            </button>
+          <div className="bg-white rounded-lg p-8">
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Utöver grundaren Christian von Koch inkluderar vårt team personer
+              med spetskompetens inom olika områden. Vi har i företaget en väl
+              avvägd blandning av gedigen erfarenhet inom exempelvis
+              energiteknik, analys, kalkylering, projekt- och arbetsledning,
+              samt kvalitetsarbete.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Luminos Energi har valt en arbetsmodell där vi samarbetar med
+              rigoröst utvalda underentreprenörer. Orsaken till detta är att vi
+              vill säkerställa att vi alltid har de duktigaste teamen inom sitt
+              område på respektive del i produktionsprocessen.
+            </p>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <SmoothScrolling>
           <Navbar />
-          <div className="pt-12 overflow-hidden">{children}</div>
+          <div className="overflow-hidden">{children}</div>
           <Footer />
         </SmoothScrolling>
       </body>
