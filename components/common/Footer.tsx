@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge } from "../ui/badge";
 
 export default function Footer() {
@@ -7,7 +8,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Luminos Energi AB</h3>
-            <p>Stockholm, Sverige</p>
+            <p>Box 50385,</p>
+            <p>102 48 Stockholm Sweden</p>
+            <p>VAT number: 556428-8578</p>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Kontakt</h3>
@@ -16,8 +19,10 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Följ Oss</h3>
             <div className="flex gap-4">
-              <Badge variant="secondary">LinkedIn</Badge>
-              <Badge variant="secondary">Twitter</Badge>
+              <Link href="https://www.linkedin.com/company/luminos-energi-ab/?viewAsMember=true">
+                {" "}
+                <Badge variant="secondary">LinkedIn</Badge>
+              </Link>
             </div>
           </div>
         </div>

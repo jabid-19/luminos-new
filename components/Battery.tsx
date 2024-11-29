@@ -160,15 +160,6 @@ export default function BatteryComponent() {
                     är som dyrast vilket i stället skapar intäkter.
                   </p>
                 </div>
-                <div className="w-10/12">
-                  <Image
-                    src="/images/battery3.jpg"
-                    alt="Solceller på tak"
-                    width={400}
-                    height={400}
-                    className="rounded-lg"
-                  />
-                </div>
               </div>
             </CardContent>
           </Card>

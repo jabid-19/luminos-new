@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
 import { Sun, Users, Target, Zap, Battery, Cpu } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Footer from "@/components/common/Footer";
 
 export default function ModernAboutUs() {
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function ModernAboutUs() {
       <div className="max-w-6xl mx-auto px-4 py-16">
         <section className="mb-20" data-aos="fade-up">
           <h2 className="text-4xl font-semibold text-primary mb-8">Om Oss</h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid  gap-8 items-center">
             <div>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Luminos Energi grundades 2023 av Christian von Koch. Bolaget
@@ -51,15 +51,6 @@ export default function ModernAboutUs() {
                 framkant med att hitta marknadens främsta produkter och
                 lösningar inom såväl teknik, material samt mjukvara.
               </p>
-            </div>
-            <div className="relative h-64 md:h-full" data-aos="fade-left">
-              <Image
-                src="/images/about3.jpg"
-                alt="Luminos Energi team"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
             </div>
           </div>
         </section>
@@ -89,16 +80,7 @@ export default function ModernAboutUs() {
           <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
             <Target className="mr-4 text-red-500" /> Målgrupp
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-64 md:h-full" data-aos="fade-right">
-              <Image
-                src="/images/about2.jpg"
-                alt="Corporate buildings"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
+          <div className="grid  gap-8 items-center">
             <div>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 Vår arbetsmodell lämpar sig bäst för företag, exempelvis
@@ -179,6 +161,7 @@ export default function ModernAboutUs() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

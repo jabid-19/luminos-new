@@ -4,14 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
-import { Button } from "../ui/button";
-import { ChevronDown, Phone } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const pathname = usePathname();
   const dropdownTimeout = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     setShowMenu(false);
@@ -52,6 +53,27 @@ export const Navbar = () => {
     }
   };
 
+  const handleNavigation = (sectionId: string) => {
+    if (pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      router.push("/");
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const offset = 100;
+          const elementPosition = section.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1800px] px-4 mx-auto rounded-full backdrop-blur-xl bg-white/30">
       <div className="w-full">
@@ -88,7 +110,7 @@ export const Navbar = () => {
           <ul className="hidden items-center gap-9 text-[#1a212d] lg:flex">
             <li>
               <div
-                onClick={() => scrollToSection("solar")}
+                onClick={() => handleNavigation("solar")}
                 className="cursor-pointer"
               >
                 <p
@@ -104,7 +126,7 @@ export const Navbar = () => {
             </li>
             <li>
               <div
-                onClick={() => scrollToSection("battery")}
+                onClick={() => handleNavigation("battery")}
                 className="cursor-pointer"
               >
                 <p
@@ -120,7 +142,7 @@ export const Navbar = () => {
             </li>
             <li>
               <div
-                onClick={() => scrollToSection("references")}
+                onClick={() => handleNavigation("references")}
                 className="cursor-pointer"
               >
                 <p
@@ -134,22 +156,7 @@ export const Navbar = () => {
                 </p>
               </div>
             </li>
-            <li>
-              <div
-                onClick={() => scrollToSection("gdpr")}
-                className="cursor-pointer"
-              >
-                <p
-                  className={`${
-                    pathname === "/referenser"
-                      ? "text-[#fab300]"
-                      : "text-[#1a212d]"
-                  } text-base`}
-                >
-                  GDPR
-                </p>
-              </div>
-            </li>
+
             <li
               className="relative"
               onMouseEnter={handleMouseEnter}
@@ -195,16 +202,22 @@ export const Navbar = () => {
                       Kontakt
                     </p>
                   </Link>
+                  <Link href="/gdpr">
+                    <p
+                      className={`${
+                        pathname === "/gdpr"
+                          ? "text-[#fab300]"
+                          : "text-[#1a212d]"
+                      } text-base px-4 py-2 hover:bg-gray-100`}
+                    >
+                      GDPR
+                    </p>
+                  </Link>
                 </div>
               )}
             </li>
           </ul>
-          <Link href="/kontakt" className="hidden lg:block">
-            <Button className="bg-black text-white hover:bg-gray-600 rounded-full px-5">
-              Kontakt
-              <Phone className="h-4 w-4 ml-2 text-white" />
-            </Button>
-          </Link>
+          <div></div>
         </div>
         <div
           className={`${
@@ -214,7 +227,7 @@ export const Navbar = () => {
           <ul className="flex flex-col gap-4 p-4 text-[#1a212d]">
             <li>
               <div
-                onClick={() => scrollToSection("solar")}
+                onClick={() => handleNavigation("solar")}
                 className="cursor-pointer"
               >
                 <p
@@ -230,7 +243,7 @@ export const Navbar = () => {
             </li>
             <li>
               <div
-                onClick={() => scrollToSection("battery")}
+                onClick={() => handleNavigation("battery")}
                 className="cursor-pointer"
               >
                 <p
@@ -246,7 +259,7 @@ export const Navbar = () => {
             </li>
             <li>
               <div
-                onClick={() => scrollToSection("references")}
+                onClick={() => handleNavigation("references")}
                 className="cursor-pointer"
               >
                 <p
@@ -260,20 +273,7 @@ export const Navbar = () => {
                 </p>
               </div>
             </li>
-            <li className="ml-4">
-              <div
-                onClick={() => scrollToSection("gdpr")}
-                className="cursor-pointer"
-              >
-                <p
-                  className={`${
-                    pathname === "/gdpr" ? "text-[#fab300]" : "text-[#1a212d]"
-                  } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
-                >
-                  GDPR
-                </p>
-              </div>
-            </li>
+
             <li>
               <Link href="/om-oss">
                 <p
@@ -298,11 +298,16 @@ export const Navbar = () => {
                 </p>
               </Link>
             </li>
-
-            <li>
-              <Button className="bg-yellow-500 text-white hover:bg-yellow-600 rounded-full">
-                Kontakt
-              </Button>
+            <li className="ml-4">
+              <Link href="/gdpe">
+                <p
+                  className={`${
+                    pathname === "/gdpe" ? "text-[#fab300]" : "text-[#1a212d]"
+                  } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
+                >
+                  GDPR
+                </p>
+              </Link>
             </li>
           </ul>
         </div>

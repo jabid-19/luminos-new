@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import { Sun, BarChart2, FileCheck, HardHat } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -109,15 +108,6 @@ export default function Solar() {
                 produktionsövervakning samt återrapportering till övergripande
                 hållbarhetssystem.
               </p>
-            </div>
-            <div className="w-11/12" data-aos="fade-left">
-              <Image
-                src="/images/solar1.jpeg"
-                alt="Luminos Energi team"
-                width={400}
-                height={600}
-                className="rounded-lg"
-              />
             </div>
           </div>
 

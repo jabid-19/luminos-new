@@ -1,14 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Solar from "@/components/Solar";
 import BatteryComponent from "@/components/Battery";
 import CompletedProjects from "@/components/CompletedProjects";
-import Gdpr from "@/components/Gdpr";
-import Link from "next/link";
 
 export default function SolarSystemsSwedish() {
   useEffect(() => {
@@ -44,52 +41,10 @@ export default function SolarSystemsSwedish() {
                 På Luminos Energi AB är vi stolta över att vara en del av den
                 gröna omställningen. Tillsammans med våra kunder bidrar vi inte
                 bara till ett mer hållbart samhälle utan säkerställer även att
-                kapital används på bästa möjliga sätt.
+                kapital används på bästa möjliga sätt. Grön energi är idag en av
+                de bästa investeringar ett företag eller en fastighetsägare kan
+                göra.
               </p>
-              <Link href="/kontakt">
-                <Button
-                  className="bg-primary hover:bg-primary/90 text-white mt-8 px-8 py-3 text-lg rounded-full transition-all duration-300"
-                  data-aos="zoom-in"
-                  data-aos-delay="400"
-                >
-                  Boka Konsultation
-                </Button>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-              {[
-                {
-                  title: "15 000+",
-                  subtitle: "Installationer",
-                  description: "Nöjda kunder",
-                },
-                {
-                  title: "25 år",
-                  subtitle: "Garanti",
-                  description: "På alla solpaneler",
-                },
-                {
-                  title: "70%",
-                  subtitle: "Besparing",
-                  description: "På energikostnader",
-                },
-              ].map((stat, index) => (
-                <div
-                  key={index}
-                  className="backdrop-blur-sm bg-white/10 p-6 rounded-xl border border-white/20"
-                  data-aos="fade-up"
-                  data-aos-delay={200 + index * 100}
-                >
-                  <h3 className="text-3xl font-bold text-white mb-2">
-                    {stat.title}
-                  </h3>
-                  <p className="text-primary font-semibold mb-1">
-                    {stat.subtitle}
-                  </p>
-                  <p className="text-gray-200 text-sm">{stat.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -103,9 +58,9 @@ export default function SolarSystemsSwedish() {
         <div id="references" className="pt-20">
           <CompletedProjects />
         </div>
-        <div id="gdpr" className="pt-20">
-          <Gdpr />
-        </div>
+      </div>
+      <div className="border-t border-gray-800 mt-8 pt-8 text-center bg-gray-900 text-white py-12">
+        <p>&copy; 2024 Luminos Energi AB. Alla rättigheter förbehållna.</p>
       </div>
     </div>
   );

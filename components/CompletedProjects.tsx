@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Building2, Zap, MapPin, Calendar } from "lucide-react";
+import { Building2, Zap, MapPin, GalleryVertical } from "lucide-react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -33,16 +33,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <p className="text-gray-600 mb-4">{subtitle}</p>
     <div className="grid grid-cols-2 gap-4 mb-4">
       <div className="flex items-center">
-        <Zap className="w-5 h-5 text-yellow-500 mr-2" />
+        <span className="flex items-center gap-1 mr-2 text-yellow-500">
+          <Zap className="w-5 h-5 " />
+          Effekt
+        </span>
         <span>{power}</span>
       </div>
       <div className="flex items-center">
-        <MapPin className="w-5 h-5 text-yellow-500 mr-2" />
+        <span className="flex items-center gap-1 mr-2 text-yellow-500">
+          <MapPin className="w-5 h-5 " />
+          Plats
+        </span>
         <span>{location}</span>
       </div>
       {panels && (
         <div className="flex items-center col-span-2">
-          <Calendar className="w-5 h-5 text-yellow-500 mr-2" />
+          <span className="flex items-center gap-1 mr-2 text-yellow-500">
+            <GalleryVertical className="w-5 h-5 " />
+            Antal paneler
+          </span>
           <span>{panels}</span>
         </div>
       )}

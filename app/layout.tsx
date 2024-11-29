@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/common/Navbar";
-import Footer from "@/components/common/Footer";
 import SmoothScrolling from "@/components/common/SmoothScrolling";
 
 const geistSans = localFont({
@@ -34,7 +33,6 @@ export default function RootLayout({
         <SmoothScrolling>
           <Navbar />
           <div className="overflow-hidden">{children}</div>
-          <Footer />
         </SmoothScrolling>
       </body>
     </html>

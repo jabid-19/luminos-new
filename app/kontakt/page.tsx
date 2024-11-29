@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { Mail, Phone, Building2, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Footer from "@/components/common/Footer";
 
 interface ContactCardProps {
   name: string;
@@ -51,30 +52,31 @@ const ContactCard: React.FC<ContactCardProps> = ({
   </Card>
 );
 
-const CompanyInfo = () => (
-  <Card className="w-full max-w-xl bg-white/10 backdrop-blur-md border-none text-white">
-    <CardContent className="pt-6">
-      <h2 className="text-2xl font-bold mb-6 text-[#fab300]">
-        Bolagsuppgifter
-      </h2>
-      <div className="space-y-4">
-        <div className="flex items-center space-x-3">
-          <Building2 className="text-gray-300" />
-          <div>
-            <p className="text-xl font-medium">Luminos Energi AB</p>
-          </div>
-        </div>
-        <div className="flex items-center space-x-3">
-          <MapPin className="text-gray-300" />
-          <div>
-            <p className="text-lg">Karlavägen 18</p>
-            <p className="text-lg">114 31 Stockholm</p>
-          </div>
-        </div>
-      </div>
-    </CardContent>
-  </Card>
-);
+// const CompanyInfo = () => (
+//   <Card className="w-full max-w-xl bg-white/10 backdrop-blur-md border-none text-white">
+//     <CardContent className="pt-6">
+//       <h2 className="text-2xl font-bold mb-6 text-[#fab300]">
+//         Bolagsuppgifter
+//       </h2>
+//       <div className="space-y-4">
+//         <div className="flex items-center space-x-3">
+//           <Building2 className="text-gray-300" />
+//           <div>
+//             <p className="text-xl font-medium">Luminos Energi AB</p>
+//           </div>
+//         </div>
+//         <div className="flex items-center space-x-3">
+//           <MapPin className="text-gray-300" />
+//           <div>
+//             <p className="text-lg">Box 50385,</p>
+//             <p className="text-lg">102 48 Stockholm Sweden</p>
+//             <p className="text-lg">VAT number: 556428-8578</p>
+//           </div>
+//         </div>
+//       </div>
+//     </CardContent>
+//   </Card>
+// );
 
 const Page = () => {
   useEffect(() => {
@@ -86,7 +88,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative pt-20">
       <div
         className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/90"
         style={{
@@ -168,15 +170,16 @@ const Page = () => {
             </div>
 
             {/* Company Info */}
-            <div
+            {/* <div
               className="flex justify-center"
               data-aos="fade-up"
               data-aos-delay="700"
             >
               <CompanyInfo />
-            </div>
+            </div> */}
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
