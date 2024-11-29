@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Gdpr from "@/components/Gdpr";
+import Footer from "@/components/common/Footer";
 
 export default function PrivacyPage() {
   useEffect(() => {
@@ -15,11 +16,28 @@ export default function PrivacyPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#4B6364] pt-20">
-      {/* Hero Section */}
-      <Gdpr />
-      <div className="border-t border-gray-800 mt-8 pt-8 text-center bg-gray-900 text-white py-12">
-        <p>&copy; 2024 Luminos Energi AB. Alla rättigheter förbehållna.</p>
+    <div className="relative pt-10">
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/70 to-black/90"
+        style={{
+          backgroundImage: `
+            linear-gradient(to bottom right, 
+              rgba(0, 0, 0, 0.95), 
+              rgba(250, 179, 0, 0.15),
+              rgba(0, 0, 0, 0.90)
+            ),
+            url(../images/gdpr.jpg)
+          `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      />
+      <div className="relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+          <Gdpr />
+        </div>
+        <Footer />
       </div>
     </div>
   );

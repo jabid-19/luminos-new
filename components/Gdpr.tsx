@@ -4,9 +4,9 @@ const Gdpr = () => {
   return (
     <div
       className="relative bg-cover bg-center md:h-[600px] flex items-center overflow-hidden"
-      style={{ backgroundImage: "url('/images/gdpr.jpg')" }}
+      // style={{ backgroundImage: "url('/images/gdpr.jpg')" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/10"></div> */}
 
       <div className="relative z-10 text-white container max-w-2xl md:px-16 px-8 py-20">
         <p className="text-3xl mb-2 font-semibold">
