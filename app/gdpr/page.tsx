@@ -22,9 +22,8 @@ export default function PrivacyPage() {
         style={{
           backgroundImage: `
             linear-gradient(to bottom right, 
-              rgba(0, 0, 0, 0.95), 
-              rgba(250, 179, 0, 0.15),
-              rgba(0, 0, 0, 0.90)
+              rgba(0, 0, 0, 0.2), 
+              rgba(0, 0, 0, 0.3)
             ),
             url(../images/gdpr.jpg)
           `,
