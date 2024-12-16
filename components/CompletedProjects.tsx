@@ -115,7 +115,7 @@ export default function CompletedProjects() {
       power: "200 kW",
       location: "Tierp",
       type: "Batterilager",
-      image: "/images/projects/ref4.jpeg",
+      image: "/images/projects/ref7.jpg",
     },
     {
       title: "Fordonskoncern",
@@ -131,7 +131,15 @@ export default function CompletedProjects() {
       power: "100 kW",
       location: "Östhammar",
       type: "Batterilager",
-      image: "/images/projects/ref7.jpg",
+      image: "/images/projects/ref4.jpeg",
+    },
+    {
+      title: "Metallindustri",
+      subtitle: "Batterilager för metallindustri",
+      power: "300 kW",
+      location: "Örebro",
+      type: "Batterilager",
+      image: "/images/projects/ref8.jpg",
     },
   ];
 
@@ -140,7 +148,7 @@ export default function CompletedProjects() {
       <div>
         <section
           className="text-center mb-16 bg-cover bg-center py-20 px-6 h-[400px] flex items-center justify-center flex-col"
-          style={{ backgroundImage: "url('/images/solar-panel.jpg')" }}
+          style={{ backgroundImage: "url('/images/solar3.jpg')" }}
         >
           <h2
             data-aos="fade-down"
@@ -149,12 +157,12 @@ export default function CompletedProjects() {
             ETT URVAL AV LUMINOS ENERGIS SLUTFÖRDA PROJEKT
           </h2>
           <p data-aos="fade-down" className="text-2xl font-medium text-white">
-            Våra Referensprojekt
+            Våra referensprojekt
           </p>
         </section>
 
         <div className="container mx-auto p-8">
-          <p className="text-gray-700 mb-8" data-aos="fade-up">
+          <p className=" mb-8" data-aos="fade-up">
             Luminos Energi har stor erfarenhet av olika typer av projekt
             innefattande solceller och batterilager. Nedan följer ett axplock av
             våra slutförda projekt.

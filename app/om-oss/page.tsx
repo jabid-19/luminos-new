@@ -24,7 +24,7 @@ export default function ModernAboutUs() {
 
         <div className="relative z-10 text-center text-white">
           <h1 className="text-6xl font-semibold mb-4" data-aos="fade-down">
-            LUMINOS ENERGI AB
+            Om Luminos Energi
           </h1>
           <p className="text-2xl" data-aos="fade-up">
             Framtidens energilösningar
@@ -34,17 +34,17 @@ export default function ModernAboutUs() {
 
       <div className="max-w-6xl mx-auto px-4 py-16">
         <section className="mb-20" data-aos="fade-up">
-          <h2 className="text-4xl font-semibold text-primary mb-8">Om Oss</h2>
+          <h2 className="text-4xl font-semibold text-primary mb-8">Om oss</h2>
           <div className="grid  gap-8 items-center">
             <div>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              <p className=" mb-4 leading-relaxed">
                 Luminos Energi grundades 2023 av Christian von Koch. Bolaget
                 utgår från en analysbaserad och strukturerad arbetsmodell
                 avseende förnybara energilösningar där kundens projektspecifika
                 förutsättningar samt förväntningar grundligt gås igenom innan vi
                 skräddarsyr varje enskilt projekt.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className=" leading-relaxed">
                 Vi tror på ett kundnära arbetssätt med hög grad av personlig
                 service för att på så sätt säkerställa högsta kvalitet och
                 kundnöjdhet. Vi ser också till att kontinuerligt ligga i
@@ -60,13 +60,13 @@ export default function ModernAboutUs() {
             <Sun className="mr-4 text-yellow-500" /> Vår filosofi
           </h2>
           <div className="bg-white rounded-lg">
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            <p className=" mb-4 leading-relaxed">
               Luminos Energis grundfilosofi är rotad i vårt engagemang för att
               medverka i omställningen till ett hållbart samhälle för kommande
               generationer. Vi tror på kraften i grön energi, både ur ett
               hållbarhets- och lönsamhetsperspektiv.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className=" leading-relaxed">
               Vi strävar efter att alltid leverera högsta kvalitet och
               professionell service till våra kunder redan från första kontakt
               fram till installation, slutbesiktning och löpande service. Vi tar
@@ -82,14 +82,14 @@ export default function ModernAboutUs() {
           </h2>
           <div className="grid  gap-8 items-center">
             <div>
-              <p className="text-gray-700 mb-4 leading-relaxed">
+              <p className=" mb-4 leading-relaxed">
                 Vår arbetsmodell lämpar sig bäst för företag, exempelvis
                 fastighetsbolag samt industrier, och vi tar därför inga uppdrag
                 från privatpersoner. Bland våra kunder återfinns flera större
                 noterade och onoterade bolag, Asset Managers samt välkända
                 industriföretag.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className=" leading-relaxed">
                 Vi har via vårt strukturerade arbetssätt stor vana vid att
                 hantera större projektportföljer vilket är särskilt viktigt för
                 våra större fastighetskunder, där flera projekt ofta behöver
@@ -145,14 +145,14 @@ export default function ModernAboutUs() {
             <Users className="mr-4 text-primary" /> Vårt Team
           </h2>
           <div className="bg-white rounded-lg p-8">
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            <p className=" mb-4 leading-relaxed">
               Utöver grundaren Christian von Koch inkluderar vårt team personer
               med spetskompetens inom olika områden. Vi har i företaget en väl
               avvägd blandning av gedigen erfarenhet inom exempelvis
               energiteknik, analys, kalkylering, projekt- och arbetsledning,
               samt kvalitetsarbete.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className=" leading-relaxed">
               Luminos Energi har valt en arbetsmodell där vi samarbetar med
               rigoröst utvalda underentreprenörer. Orsaken till detta är att vi
               vill säkerställa att vi alltid har de duktigaste teamen inom sitt

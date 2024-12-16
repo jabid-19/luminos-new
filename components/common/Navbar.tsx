@@ -53,12 +53,11 @@ export const Navbar = () => {
     }
   };
 
-  const handleNavigation = (sectionId: string) => {
+  const handleNavigation = async (sectionId: string) => {
     if (pathname === "/") {
       scrollToSection(sectionId);
     } else {
-      router.push("/");
-      // Wait for navigation to complete before scrolling
+      await router.push("/");
       setTimeout(() => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -70,13 +69,13 @@ export const Navbar = () => {
             behavior: "smooth",
           });
         }
-      }, 100);
+      }, 300);
     }
   };
 
   return (
     <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1800px] px-4 mx-auto rounded-full backdrop-blur-xl bg-white/30">
-      <div className="w-full">
+      <div className="w-full relative">
         <div className="flex items-center justify-between px-8 py-4 text-base">
           <div>
             <Link href="/" aria-label="Luminos">
@@ -91,7 +90,7 @@ export const Navbar = () => {
           </div>
           <div
             onClick={() => setShowMenu(!showMenu)}
-            className="block cursor-pointer text-[#fab300] lg:hidden"
+            className="ml-auto block cursor-pointer text-[#fab300] lg:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -115,12 +114,12 @@ export const Navbar = () => {
               >
                 <p
                   className={`${
-                    pathname === "/solpaneler"
+                    pathname === "/solceller"
                       ? "text-[#fab300]"
                       : "text-[#1a212d]"
                   } text-base`}
                 >
-                  Solpaneler
+                  Solceller
                 </p>
               </div>
             </li>
@@ -166,7 +165,7 @@ export const Navbar = () => {
                 className={`flex items-center gap-1 cursor-pointer ${
                   pathname === "/om-oss" ||
                   pathname === "/kontakt" ||
-                  pathname === "/gdpr"
+                  pathname === "/personuppgiftshantering"
                     ? "text-[#fab300]"
                     : "text-[#1a212d]"
                 } text-base`}
@@ -176,7 +175,7 @@ export const Navbar = () => {
               </div>
               {showDropdown && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg py-2"
+                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -188,7 +187,7 @@ export const Navbar = () => {
                           : "text-[#1a212d]"
                       } text-base px-4 py-2 hover:bg-gray-100`}
                     >
-                      Om Oss
+                      Luminos Energi
                     </p>
                   </Link>
                   <Link href="/kontakt">
@@ -202,15 +201,15 @@ export const Navbar = () => {
                       Kontakt
                     </p>
                   </Link>
-                  <Link href="/gdpr">
+                  <Link href="/personuppgiftshantering">
                     <p
                       className={`${
-                        pathname === "/gdpr"
+                        pathname === "/personuppgiftshantering"
                           ? "text-[#fab300]"
                           : "text-[#1a212d]"
                       } text-base px-4 py-2 hover:bg-gray-100`}
                     >
-                      GDPR
+                      Personuppgiftshantering
                     </p>
                   </Link>
                 </div>
@@ -220,9 +219,9 @@ export const Navbar = () => {
           <div></div>
         </div>
         <div
-          className={`${
+          className={`absolute ${
             showMenu ? "block" : "hidden"
-          } w-full bg-white shadow-lg lg:hidden`}
+          } w-full bg-white shadow-lg lg:hidden rounded-lg`}
         >
           <ul className="flex flex-col gap-4 p-4 text-[#1a212d]">
             <li>
@@ -232,12 +231,12 @@ export const Navbar = () => {
               >
                 <p
                   className={`${
-                    pathname === "/solpaneler"
+                    pathname === "/solceller"
                       ? "text-[#fab300]"
                       : "text-[#1a212d]"
                   } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
                 >
-                  Solpaneler
+                  Solceller
                 </p>
               </div>
             </li>
@@ -281,7 +280,7 @@ export const Navbar = () => {
                     pathname === "/om-oss" ? "text-[#fab300]" : "text-[#1a212d]"
                   } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
                 >
-                  Om Oss
+                  Luminos Energi
                 </p>
               </Link>
             </li>
@@ -299,13 +298,15 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="ml-4">
-              <Link href="/gdpe">
+              <Link href="/personuppgiftshantering">
                 <p
                   className={`${
-                    pathname === "/gdpe" ? "text-[#fab300]" : "text-[#1a212d]"
+                    pathname === "/personuppgiftshantering"
+                      ? "text-[#fab300]"
+                      : "text-[#1a212d]"
                   } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
                 >
-                  GDPR
+                  Personuppgiftshantering
                 </p>
               </Link>
             </li>

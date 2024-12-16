@@ -15,27 +15,23 @@ export default function Solar() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mt-10">
       <div className="mx-auto">
-        <section
-          className="text-center mb-16 bg-cover bg-center py-20 px-6 relative h-[400px] flex items-center justify-center flex-col"
-          style={{ backgroundImage: "url('/images/solar3.jpg')" }}
-        >
-          <div className="absolute inset-0 bg-black opacity-20"></div>
+        <section className="text-center mb-8 bg-cover bg-center py-10 px-6 relative h-[200px] flex items-center justify-center flex-col">
           <h2
             data-aos="fade-down"
-            className="text-4xl font-semibold text-white mb-4 max-w-4xl"
+            className="text-4xl mb-4 max-w-4xl font-sans font-normal"
           >
-            MINSKA DINA ENERGIKOSTNADER OCH KOLDIXIDAVTRYCK MED SOLCELLER
+            MINSKA ERA ENERGIKOSTNADER OCH ERT KOLDIOXIDAVTRYCK MED SOLCELLER
           </h2>
-          <p data-aos="fade-down" className="text-2xl font-medium text-white">
-            Utnyttja Solens Kraft
+          <p data-aos="fade-down" className="text-2xl font-sans font-normal ">
+            Utnyttja solens kraft
           </p>
         </section>
 
         <div className="container mx-auto p-8">
           <div className="flex flex-col md:flex-row gap-10">
-            <p className="text-gray-700 mb-4" data-aos="fade-right">
+            <p className=" mb-4 font-sans font-light" data-aos="fade-right">
               Genom att installera solceller på er fastighet, eller på ett
               markområde med markstativ, minskar ni era elkostnader betydligt
               över tid. Dessutom förbättras er verksamhets koldioxidavtryck
@@ -46,12 +42,8 @@ export default function Solar() {
               betydelse eftersom det i förlängningen indirekt även påverkar
               försäkringsmöjligheter, finansieringskostnader m.m.
             </p>
-            <div className="gap-10">
-              <p
-                className="text-gray-700 mb-4"
-                data-aos="fade-left"
-                data-aos-delay="100"
-              >
+            <div className="gap-10 font-sans font-light">
+              <p className=" mb-4" data-aos="fade-left" data-aos-delay="100">
                 Solceller är en mycket lönsam investering för både
                 industriföretag och renodlade fastighetsägare. Och för att
                 lönsamheten ska bli optimal är det viktigt att solcellernas
@@ -65,11 +57,7 @@ export default function Solar() {
                 förhållande till rådande spotpris vilket sänker anläggningens
                 lönsamhet.
               </p>
-              <p
-                className="text-gray-700 mb-4"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
+              <p className=" mb-4" data-aos="fade-left" data-aos-delay="200">
                 För större installationer överstigande 500 kWp, där
                 energiskatten inte undviks, har våra kunder ofta reducerad
                 energiskatt vilket gör att skatten inte påverkar kalkylen i
@@ -85,7 +73,7 @@ export default function Solar() {
 
           <div className="flex flex-col md:flex-row gap-10 items-start mt-20">
             <div className="">
-              <p className="text-gray-700 mb-4" data-aos="fade-right">
+              <p className=" mb-4" data-aos="fade-right">
                 Vi på Luminos Energi följer kontinuerligt teknikutvecklingen
                 inom grön energi och tillser att våra kunder alltid har tillgång
                 till det senaste och bästa tillgängliga komponenterna på
@@ -95,11 +83,7 @@ export default function Solar() {
                 över tid är exempel på faktorer som vi beaktar noga i vår
                 urvalsprocess.
               </p>
-              <p
-                className="text-gray-700"
-                data-aos="fade-right"
-                data-aos-delay="100"
-              >
+              <p className="" data-aos="fade-right" data-aos-delay="100">
                 Förutom kvalitet på solceller, växelriktare samt montagesystem
                 ser vi även till att erbjuda de senaste och bästa
                 mjukvarulösningarna till våra kunder. Här händer för närvarande
@@ -119,11 +103,7 @@ export default function Solar() {
               Vår arbetsmodell
             </h2>
             <div>
-              <p
-                className="text-gray-700 mb-8"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
+              <p className=" mb-8" data-aos="fade-up" data-aos-delay="100">
                 För att kunna rekommendera en kund vilken solcellslösning som är
                 optimal givet de projektspecifika förutsättningarna arbetar vi
                 analysbaserat och strukturerat från dag ett. Vår arbetsmodell

@@ -69,11 +69,11 @@ export default function ReferencesPage() {
           location: "Stockholm",
           savings: "30%",
         },
-        tags: ["Solpaneler", "Batterilagring", "Kommersiellt"],
+        tags: ["Solceller", "Batterilagring", "Kommersiellt"],
       },
       {
         name: "Industrihuset Väst",
-        description: "Solpaneler på industritak med batterilagring",
+        description: "Solceller på industritak med batterilagring",
         details: {
           power: "500 kW",
           completion: "2023",
@@ -291,7 +291,7 @@ export default function ReferencesPage() {
                 ))}
               </div>
               <p
-                className="mt-8 text-gray-700 text-center max-w-2xl mx-auto"
+                className="mt-8 text-center max-w-2xl mx-auto"
                 data-aos="fade-up"
               >
                 {type === "roof"

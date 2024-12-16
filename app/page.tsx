@@ -17,24 +17,23 @@ export default function SolarSystemsSwedish() {
   }, []);
 
   return (
-    <div className="min-h-screen text-gray-800">
-      <div className="mx-auto text-gray-700">
+    <div className="min-h-screen ">
+      <div className="mx-auto">
         {/* Hero Section */}
         <div
           className="min-h-screen relative overflow-hidden bg-cover bg-center flex items-center"
           style={{ backgroundImage: "url('/images/hero.webp')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30"></div>
           <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10 py-36">
             <div className="max-w-5xl mx-auto text-center space-y-8">
-              <h1
+              {/* <h1
                 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
                 data-aos="fade-down"
               >
                 LUMINOS <span className="text-primary">ENERGI AB</span>
-              </h1>
+              </h1> */}
               <p
-                className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-3xl mx-auto"
+                className="text-xl md:text-2xl text-white leading-relaxed max-w-3xl mx-auto"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >

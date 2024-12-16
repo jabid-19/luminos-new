@@ -35,7 +35,7 @@ export default function BatteryComponent() {
 
         <div className="container mx-auto p-8">
           <div className="mb-8" data-aos="fade-up">
-            <p className="text-gray-700">
+            <p className="">
               Luminos Energi erbjuder innovativa gröna energilösningar som inte
               bara hjälper företag med att effektivisera sin energiförbrukning,
               utan även genererar löpande intäkter från energimarknaden.
@@ -58,7 +58,7 @@ export default function BatteryComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <p className="text-gray-700">
+                <p className="">
                   Luminos Energi ger ert företag möjlighet att aktivt delta i
                   stödtjänstmarknaderna mot Svenska kraftnät. Genom att ansluta
                   ert batterilager till elnätet kan ditt företag erbjuda
@@ -83,7 +83,7 @@ export default function BatteryComponent() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <p className="text-gray-700">
+                <p className="">
                   Våra batterilager gör det möjligt för ditt företag att lagra
                   överskottsel under perioder av låg efterfrågan och sedan
                   återföra den lagrade energin till nätet när priserna är högre,
@@ -107,7 +107,7 @@ export default function BatteryComponent() {
                     <BarChart2 className="w-8 h-8 text-primary mr-4" />
                     Effektiv hantering av interna effekttoppar
                   </div>
-                  <p className="text-gray-700 mb-4">
+                  <p className=" mb-4">
                     En annan betydande fördel med våra batterilager är
                     möjligheten att hantera interna effekttoppar i er
                     verksamhet. Under perioder av hög belastning, som vid
@@ -117,7 +117,7 @@ export default function BatteryComponent() {
                     kostsamma effekttoppar. Denna effektreserv är också en
                     fördel i samband med elbils- eller lastbilsladdning.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="">
                     Kostnad för toppar i effektuttag kommer med all sannolikhet
                     att bli högre kommande år och ett tydligt tecken på detta är
                     att Energimarknadsinspektionen givit nätägarna grönt ljus
@@ -148,7 +148,7 @@ export default function BatteryComponent() {
                     <Sun className="w-8 h-8 text-primary mr-4" />
                     Lagring av solenergi
                   </div>
-                  <p className="text-gray-700">
+                  <p className="">
                     I det fall ert företag installerar, eller redan har
                     installerat, solceller kan batterilagret lagra eventuell
                     överskottsel från solcellsanläggningen. Solcellerna

@@ -14,27 +14,35 @@ interface ContactCardProps {
   email?: string;
 }
 
+// Utility function to encode contact information
+const encodeContactInfo = (text: string): string => {
+  return text
+    .split('')
+    .map(char => `&#${char.charCodeAt(0)};`)
+    .join('');
+};
+
 const ContactCard: React.FC<ContactCardProps> = ({
   name,
   title,
   phone,
   email,
 }) => (
-  <Card className="w-[300px] bg-white/10 backdrop-blur-md border-none text-white hover:bg-white/15 transition-all duration-300">
+  <Card className="w-[230px] bg-white/10 backdrop-blur-md border-none text-white hover:bg-white/15 transition-all duration-300">
     <CardContent className="pt-6">
       <div className="flex flex-col space-y-4">
         <div className="space-y-2">
-          <h2 className="text-2xl font-semibold tracking-tight">{name}</h2>
+          <h2 className="text-xl font-semibold tracking-tight">{name}</h2>
           <p className="text-lg text-gray-300">{title}</p>
         </div>
         <div className="space-y-3">
           <a
-            href={`tel:${phone}`}
+            href={`tel:${phone.replace(/\s/g, '')}`}
             className="flex items-center space-x-2 text-gray-300 hover:text-[#fab300] transition-colors duration-200"
             aria-label={`Call ${name}`}
           >
             <Phone size={18} />
-            <span>{phone}</span>
+            <span dangerouslySetInnerHTML={{ __html: encodeContactInfo(phone) }} />
           </a>
           {email && (
             <a
@@ -43,7 +51,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
               aria-label={`Email ${name}`}
             >
               <Mail size={18} />
-              <span>{email}</span>
+              <span dangerouslySetInnerHTML={{ __html: encodeContactInfo(email) }} />
             </a>
           )}
         </div>
@@ -117,14 +125,9 @@ const Page = () => {
               </p>
             </div>
 
-            {/* VD Card - Prominently displayed */}
-            <div
-              className="flex justify-center"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#fab300] via-yellow-500 to-[#fab300] rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+            {/* Contact Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div data-aos="fade-up" data-aos-delay="200">
                 <ContactCard
                   name="Christian von Koch"
                   title="VD"
@@ -132,14 +135,10 @@ const Page = () => {
                   email="christian@luminos.se"
                 />
               </div>
-            </div>
-
-            {/* Other Contact Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
               <div data-aos="fade-up" data-aos-delay="300">
                 <ContactCard
                   name="Fredrik Johansson"
-                  title="Marknad"
+                  title="Energirådgivare"
                   phone="0733 83 01 01"
                   email="fredrik@luminos.se"
                 />
@@ -149,12 +148,13 @@ const Page = () => {
                   name="Severin Martinov"
                   title="Projektsamordnare"
                   phone="0733 83 01 02"
+                  email="severin@luminos.se"
                 />
               </div>
               <div data-aos="fade-up" data-aos-delay="500">
                 <ContactCard
                   name="Gabriel Eriksson"
-                  title="Marknad"
+                  title="Affärsrådgivare"
                   phone="0733 83 01 04"
                   email="gabriel@luminos.se"
                 />
@@ -162,7 +162,7 @@ const Page = () => {
               <div data-aos="fade-up" data-aos-delay="600">
                 <ContactCard
                   name="Ola Hörnelius"
-                  title="Marknad"
+                  title="Affärsrådgivare"
                   phone="0733 83 01 03"
                   email="ola@luminos.se"
                 />

@@ -28,7 +28,7 @@ export default function LuminosEnergiLanding() {
               data-aos="zoom-out"
               data-aos-duration="1500"
             >
-              Solpaneler på Tak
+              Solceller på Tak
             </h2>
             <p
               className="text-xl mb-8 opacity-90 max-w-3xl mx-auto"
@@ -107,7 +107,7 @@ export default function LuminosEnergiLanding() {
                   title: "Intern Konstruktionsanalys",
                   icon: <Zap className="h-8 w-8 text-yellow-500" />,
                   description:
-                    "Våra interna konstruktörer analyserar fastighetens ritningar och genomför noggranna platsbesök för att garantera att takets hållfasthet är tillräcklig för montering av solpaneler.",
+                    "Våra interna konstruktörer analyserar fastighetens ritningar och genomför noggranna platsbesök för att garantera att takets hållfasthet är tillräcklig för montering av solceller.",
                   animation: "flip-right",
                 },
               ].map((item, index) => (
@@ -196,7 +196,7 @@ export default function LuminosEnergiLanding() {
               >
                 <Image
                   src="/images/solar-panel.jpg"
-                  alt="Solpaneler på tak"
+                  alt="Solceller på tak"
                   width={600}
                   height={400}
                   className="rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300"
@@ -213,7 +213,7 @@ export default function LuminosEnergiLanding() {
                 <p className="opacity-90 mb-4">
                   Teknologin bakom solenergi har gjort betydande framsteg de
                   senaste åren, vilket har lett till ökad effektivitet och
-                  tillgänglighet. Moderna solpaneler har utvecklats med högre
+                  tillgänglighet. Moderna solceller har utvecklats med högre
                   verkningsgrader och sjunkande produktionskostnader, vilket gör
                   dem mer attraktiva och ekonomiskt fördelaktiga för företag
                   världen över.
