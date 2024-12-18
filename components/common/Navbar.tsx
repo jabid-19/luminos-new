@@ -56,6 +56,7 @@ export const Navbar = () => {
   const handleNavigation = async (sectionId: string) => {
     if (pathname === "/") {
       scrollToSection(sectionId);
+      setShowMenu(false);
     } else {
       await router.push("/");
       setTimeout(() => {
@@ -69,12 +70,13 @@ export const Navbar = () => {
             behavior: "smooth",
           });
         }
+        setShowMenu(false);
       }, 300);
     }
   };
 
   return (
-    <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1800px] px-4 mx-auto rounded-full backdrop-blur-xl bg-white/30">
+    <nav className="fixed top-10 left-1/2 font-normal -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1800px] px-4 mx-auto rounded-full backdrop-blur-xl bg-white/30">
       <div className="w-full relative">
         <div className="flex items-center justify-between px-8 py-4 text-base">
           <div>
@@ -135,7 +137,7 @@ export const Navbar = () => {
                       : "text-[#1a212d]"
                   } text-base`}
                 >
-                  Batterier
+                  Batterilager
                 </p>
               </div>
             </li>
@@ -252,7 +254,7 @@ export const Navbar = () => {
                       : "text-[#1a212d]"
                   } text-base block py-1 hover:bg-[#fed27f] hover:px-2`}
                 >
-                  Batterier
+                  Batterilager
                 </p>
               </div>
             </li>

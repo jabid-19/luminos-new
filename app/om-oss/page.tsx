@@ -23,7 +23,7 @@ export default function ModernAboutUs() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
 
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-6xl font-semibold mb-4" data-aos="fade-down">
+          <h1 className="text-6xl font-normal mb-4" data-aos="fade-down">
             Om Luminos Energi
           </h1>
           <p className="text-2xl" data-aos="fade-up">
@@ -34,7 +34,7 @@ export default function ModernAboutUs() {
 
       <div className="max-w-6xl mx-auto px-4 py-16">
         <section className="mb-20" data-aos="fade-up">
-          <h2 className="text-4xl font-semibold text-primary mb-8">Om oss</h2>
+          <h2 className="text-4xl font-normal text-primary mb-8">Om oss</h2>
           <div className="grid  gap-8 items-center">
             <div>
               <p className=" mb-4 leading-relaxed">
@@ -56,7 +56,7 @@ export default function ModernAboutUs() {
         </section>
 
         <section className="mb-20" data-aos="fade-up">
-          <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
+          <h2 className="text-4xl font-normal text-primary mb-8 flex items-center">
             <Sun className="mr-4 text-yellow-500" /> Vår filosofi
           </h2>
           <div className="bg-white rounded-lg">
@@ -77,7 +77,7 @@ export default function ModernAboutUs() {
         </section>
 
         <section className="mb-20" data-aos="fade-up">
-          <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
+          <h2 className="text-4xl font-normal text-primary mb-8 flex items-center">
             <Target className="mr-4 text-red-500" /> Målgrupp
           </h2>
           <div className="grid  gap-8 items-center">
@@ -100,7 +100,7 @@ export default function ModernAboutUs() {
         </section>
 
         <section className="mb-20" data-aos="fade-up">
-          <h2 className="text-4xl font-semibold text-primary mb-8 flex items-center">
+          <h2 className="text-4xl font-normal text-primary mb-8 flex items-center">
             <Zap className="mr-4 text-yellow-500" /> Våra Produkter och Tjänster
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -141,7 +141,7 @@ export default function ModernAboutUs() {
         </section>
 
         <section className="mb-20" data-aos="fade-up">
-          <h2 className="text-4xl font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-4xl font-normal text-primary mb-4 flex items-center">
             <Users className="mr-4 text-primary" /> Vårt Team
           </h2>
           <div className="bg-white rounded-lg p-8">

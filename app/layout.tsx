@@ -3,11 +3,12 @@ import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/common/Navbar";
 import SmoothScrolling from "@/components/common/SmoothScrolling";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   variable: "--font-source-sans",
-  weight: ["200", "300", "400", "500", "600", "700", "900"],
+  weight: ["300", "400", "500", "600", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -23,11 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sourceSans.variable} antialiased`}>
+      <body
+        className={`${sourceSans.variable} antialiased font-sans font-light`}
+      >
         <SmoothScrolling>
           <Navbar />
           <div className="overflow-hidden">{children}</div>
         </SmoothScrolling>
+        <GoogleAnalytics gaId="G-XYZ" />
       </body>
     </html>
   );

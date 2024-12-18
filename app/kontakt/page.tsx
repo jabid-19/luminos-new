@@ -17,9 +17,9 @@ interface ContactCardProps {
 // Utility function to encode contact information
 const encodeContactInfo = (text: string): string => {
   return text
-    .split('')
-    .map(char => `&#${char.charCodeAt(0)};`)
-    .join('');
+    .split("")
+    .map((char) => `&#${char.charCodeAt(0)};`)
+    .join("");
 };
 
 const ContactCard: React.FC<ContactCardProps> = ({
@@ -37,12 +37,14 @@ const ContactCard: React.FC<ContactCardProps> = ({
         </div>
         <div className="space-y-3">
           <a
-            href={`tel:${phone.replace(/\s/g, '')}`}
+            href={`tel:${phone.replace(/\s/g, "")}`}
             className="flex items-center space-x-2 text-gray-300 hover:text-[#fab300] transition-colors duration-200"
             aria-label={`Call ${name}`}
           >
             <Phone size={18} />
-            <span dangerouslySetInnerHTML={{ __html: encodeContactInfo(phone) }} />
+            <span
+              dangerouslySetInnerHTML={{ __html: encodeContactInfo(phone) }}
+            />
           </a>
           {email && (
             <a
@@ -51,7 +53,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
               aria-label={`Email ${name}`}
             >
               <Mail size={18} />
-              <span dangerouslySetInnerHTML={{ __html: encodeContactInfo(email) }} />
+              <span
+                dangerouslySetInnerHTML={{ __html: encodeContactInfo(email) }}
+              />
             </a>
           )}
         </div>
@@ -63,7 +67,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 // const CompanyInfo = () => (
 //   <Card className="w-full max-w-xl bg-white/10 backdrop-blur-md border-none text-white">
 //     <CardContent className="pt-6">
-//       <h2 className="text-2xl font-bold mb-6 text-[#fab300]">
+//       <h2 className="text-2xl font-normal mb-6 text-[#fab300]">
 //         Bolagsuppgifter
 //       </h2>
 //       <div className="space-y-4">
@@ -117,7 +121,7 @@ const Page = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="space-y-16">
             <div className="text-center" data-aos="fade-down">
-              <h1 className="text-5xl md:text-6xl font-bold text-[#fab300] mb-4 [text-shadow:_0_1px_12px_rgb(250_179_0_/_20%)]">
+              <h1 className="text-5xl md:text-6xl font-normal text-[#fab300] mb-4 [text-shadow:_0_1px_12px_rgb(250_179_0_/_20%)]">
                 KONTAKT
               </h1>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">

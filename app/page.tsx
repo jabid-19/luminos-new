@@ -26,14 +26,14 @@ export default function SolarSystemsSwedish() {
         >
           <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10 py-36">
             <div className="max-w-5xl mx-auto text-center space-y-8">
-              {/* <h1
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+              <h1
+                className="text-4xl md:text-6xl font-semibold text-white leading-tight"
                 data-aos="fade-down"
               >
-                LUMINOS <span className="text-primary">ENERGI AB</span>
-              </h1> */}
+                ENERGI SOM GÖR SKILLNAD
+              </h1>
               <p
-                className="text-xl md:text-2xl text-white leading-relaxed max-w-3xl mx-auto"
+                className="text-xl md:text-2xl font-normal text-white leading-relaxed max-w-3xl mx-auto"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -58,7 +58,7 @@ export default function SolarSystemsSwedish() {
           <CompletedProjects />
         </div>
       </div>
-      <div className="border-t border-gray-800 mt-8 pt-8 text-center bg-gray-900 text-white py-12">
+      <div className="mt-8 pt-8 text-center py-12">
         <p>&copy; 2024 Luminos Energi AB. Alla rättigheter förbehållna.</p>
       </div>
     </div>

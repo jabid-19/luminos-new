@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { Zap, TrendingUp, BarChart2, Sun } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -25,11 +25,11 @@ export default function BatteryComponent() {
         >
           <div className="absolute inset-0 bg-black opacity-40"></div>
           <div className="z-10 max-w-4xl">
-            <h2 className="text-3xl font-semibold text-white mb-4">
+            <h2 className="text-3xl font-normal text-white mb-4">
               GENERERA INTÄKTER OCH OPTIMERA DIN ENERGIFÖRBRUKNING MED
               BATTERILAGER
             </h2>
-            <p className="text-2xl font-medium text-white">Batterilösningar</p>
+            <p className="text-2xl font-normal text-white">Batterilösningar</p>
           </div>
         </section>
 
@@ -52,7 +52,7 @@ export default function BatteryComponent() {
           <div className="grid md:grid-cols-2 gap-10 mb-16">
             <Card className="shadow-none border-none" data-aos="fade-right">
               <CardHeader className="p-0 mb-4">
-                <CardTitle className="flex items-center text-2xl font-medium text-primary">
+                <CardTitle className="flex items-center text-2xl font-normal text-primary">
                   <Zap className="w-8 h-8 text-primary mr-4" />
                   Delta i frekvensbalanseringsmarknaden
                 </CardTitle>
@@ -77,7 +77,7 @@ export default function BatteryComponent() {
             </Card>
             <Card className="shadow-none border-none" data-aos="fade-left">
               <CardHeader className="p-0 mb-4">
-                <CardTitle className="flex items-center text-2xl font-medium text-primary">
+                <CardTitle className="flex items-center text-2xl font-normal text-primary">
                   <TrendingUp className="w-8 h-8 text-primary mr-4" />
                   Energiprisarbitrage
                 </CardTitle>
@@ -102,12 +102,12 @@ export default function BatteryComponent() {
           >
             <CardContent className="p-0">
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="md:w-1/2">
-                  <div className="flex items-center text-2xl font-medium text-primary mb-8">
+                <div className="">
+                  <div className="flex items-center text-2xl font-normal text-primary mb-8">
                     <BarChart2 className="w-8 h-8 text-primary mr-4" />
                     Effektiv hantering av interna effekttoppar
                   </div>
-                  <p className=" mb-4">
+                  <p className="mb-4">
                     En annan betydande fördel med våra batterilager är
                     möjligheten att hantera interna effekttoppar i er
                     verksamhet. Under perioder av hög belastning, som vid
@@ -124,7 +124,7 @@ export default function BatteryComponent() {
                     att höja nätavgifterna med 100 Mdr fram till 2027.
                   </p>
                 </div>
-                <div className="md:w-1/2">
+                {/* <div className="md:w-1/2">
                   <Image
                     src="/images/battery2.jpeg"
                     alt="Solceller på tak"
@@ -132,7 +132,7 @@ export default function BatteryComponent() {
                     height={400}
                     className="rounded-lg"
                   />
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
@@ -144,7 +144,7 @@ export default function BatteryComponent() {
             <CardContent className="p-0 mb-4">
               <div className="flex flex-col md:flex-row-reverse gap-8 items-center">
                 <div className="">
-                  <div className="flex items-center text-2xl font-medium text-primary mb-8  ">
+                  <div className="flex items-center text-2xl font-normal text-primary mb-8  ">
                     <Sun className="w-8 h-8 text-primary mr-4" />
                     Lagring av solenergi
                   </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Building2, Zap, MapPin, GalleryVertical } from "lucide-react";
+import { Building2, Zap, MapPin, GalleryVertical, Clock } from "lucide-react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,6 +12,7 @@ interface ProjectCardProps {
   power: string;
   location: string;
   panels?: string;
+  capacity?: string;
   type: "Solcellsanläggning" | "Batterilager";
   image: string;
 }
@@ -22,25 +23,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   power,
   location,
   panels,
+  capacity,
   type,
   image,
 }) => (
   <div className="bg-white rounded-lg border p-6 mb-2">
     <div className="flex items-center mb-2">
       <Building2 className="w-6 h-6 text-yellow-500 mr-2" />
-      <h3 className="text-xl font-bold">{title}</h3>
+      <h3 className="text-xl font-semibold">{title}</h3>
     </div>
     <p className="text-gray-600 mb-4">{subtitle}</p>
     <div className="grid grid-cols-2 gap-4 mb-4">
       <div className="flex items-center">
-        <span className="flex items-center gap-1 mr-2 text-yellow-500">
+        <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
           <Zap className="w-5 h-5 " />
           Effekt
         </span>
         <span>{power}</span>
       </div>
       <div className="flex items-center">
-        <span className="flex items-center gap-1 mr-2 text-yellow-500">
+        <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
           <MapPin className="w-5 h-5 " />
           Plats
         </span>
@@ -48,16 +50,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </div>
       {panels && (
         <div className="flex items-center col-span-2">
-          <span className="flex items-center gap-1 mr-2 text-yellow-500">
+          <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
             <GalleryVertical className="w-5 h-5 " />
             Antal paneler
           </span>
           <span>{panels}</span>
         </div>
       )}
+      {capacity && (
+        <div className="flex items-center col-span-2">
+          <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
+            <Clock className="w-5 h-5 " />
+            Kapacitet
+          </span>
+          <span>{capacity}</span>
+        </div>
+      )}
     </div>
     <div className="flex space-x-2 mb-4">
-      <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+      <span className="bg-blue-100 text-blue-800 text-xs font-normal px-2.5 py-0.5 rounded">
         {type}
       </span>
     </div>
@@ -114,6 +125,7 @@ export default function CompletedProjects() {
       subtitle: "Batterilager för industriföretag",
       power: "200 kW",
       location: "Tierp",
+      capacity: "200 kWh",
       type: "Batterilager",
       image: "/images/projects/ref7.jpg",
     },
@@ -122,6 +134,7 @@ export default function CompletedProjects() {
       subtitle: "Batterilager för fordonsindustri",
       power: "200 kW",
       location: "Växjö",
+      capacity: "200 kWh",
       type: "Batterilager",
       image: "/images/projects/ref2.jpeg",
     },
@@ -130,14 +143,16 @@ export default function CompletedProjects() {
       subtitle: "Batterilager för industriföretag",
       power: "100 kW",
       location: "Östhammar",
+      capacity: "100 kWh",
       type: "Batterilager",
       image: "/images/projects/ref4.jpeg",
     },
     {
-      title: "Metallindustri",
+      title: "Gummiindustri",
       subtitle: "Batterilager för metallindustri",
       power: "300 kW",
       location: "Örebro",
+      capacity: "696 kWh",
       type: "Batterilager",
       image: "/images/projects/ref8.jpg",
     },
@@ -152,7 +167,7 @@ export default function CompletedProjects() {
         >
           <h2
             data-aos="fade-down"
-            className="text-4xl font-semibold text-white mb-4 max-w-4xl"
+            className="text-4xl font-normal text-white mb-4 max-w-4xl"
           >
             ETT URVAL AV LUMINOS ENERGIS SLUTFÖRDA PROJEKT
           </h2>
