@@ -124,7 +124,7 @@ const Page = () => {
               <h1 className="text-5xl md:text-6xl font-normal text-[#fab300] mb-4 [text-shadow:_0_1px_12px_rgb(250_179_0_/_20%)]">
                 KONTAKT
               </h1>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              <p className="text-xl text-white font-normal max-w-2xl mx-auto">
                 Välkommen att kontakta oss för mer information om våra tjänster
               </p>
             </div>

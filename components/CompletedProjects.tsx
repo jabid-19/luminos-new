@@ -27,43 +27,43 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   type,
   image,
 }) => (
-  <div className="bg-white rounded-lg border p-6 mb-2">
+  <div className="bg-white rounded-lg border p-4 sm:p-6 mb-2 w-full">
     <div className="flex items-center mb-2">
-      <Building2 className="w-6 h-6 text-yellow-500 mr-2" />
-      <h3 className="text-xl font-semibold">{title}</h3>
+      <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 mr-2" />
+      <h3 className="text-lg sm:text-xl font-semibold">{title}</h3>
     </div>
-    <p className="text-gray-600 mb-4">{subtitle}</p>
-    <div className="grid grid-cols-2 gap-4 mb-4">
+    <p className="text-gray-600 mb-4 text-sm sm:text-base">{subtitle}</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-4">
       <div className="flex items-center">
-        <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
-          <Zap className="w-5 h-5 " />
+        <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500 text-sm sm:text-base">
+          <Zap className="w-4 h-4 sm:w-5 sm:h-5" />
           Effekt
         </span>
-        <span>{power}</span>
+        <span className="text-sm sm:text-base">{power}</span>
       </div>
       <div className="flex items-center">
-        <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
-          <MapPin className="w-5 h-5 " />
+        <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500 text-sm sm:text-base">
+          <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
           Plats
         </span>
-        <span>{location}</span>
+        <span className="text-sm sm:text-base">{location}</span>
       </div>
       {panels && (
-        <div className="flex items-center col-span-2">
-          <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
-            <GalleryVertical className="w-5 h-5 " />
+        <div className="flex items-center col-span-1 sm:col-span-2">
+          <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500 text-sm sm:text-base">
+            <GalleryVertical className="w-4 h-4 sm:w-5 sm:h-5" />
             Antal paneler
           </span>
-          <span>{panels}</span>
+          <span className="text-sm sm:text-base">{panels}</span>
         </div>
       )}
       {capacity && (
-        <div className="flex items-center col-span-2">
-          <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500">
-            <Clock className="w-5 h-5 " />
+        <div className="flex items-center col-span-1 sm:col-span-2">
+          <span className="flex items-center font-normal gap-1 mr-2 text-yellow-500 text-sm sm:text-base">
+            <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
             Kapacitet
           </span>
-          <span>{capacity}</span>
+          <span className="text-sm sm:text-base">{capacity}</span>
         </div>
       )}
     </div>
@@ -72,11 +72,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {type}
       </span>
     </div>
-    <div className="relative w-full h-[200px]">
+    <div className="relative w-full aspect-[4/3]">
       <Image
         src={image}
         alt={`Project image for ${title}`}
         fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         style={{ objectFit: "cover" }}
         className="rounded"
       />
@@ -162,28 +163,31 @@ export default function CompletedProjects() {
     <div className="min-h-screen">
       <div>
         <section
-          className="text-center mb-16 bg-cover bg-center py-20 px-6 h-[400px] flex items-center justify-center flex-col"
+          className="text-center mb-8 sm:mb-16 bg-cover bg-center py-12 sm:py-20 px-4 sm:px-6 h-[300px] sm:h-[400px] flex items-center justify-center flex-col"
           style={{ backgroundImage: "url('/images/solar3.jpg')" }}
         >
           <h2
             data-aos="fade-down"
-            className="text-4xl font-normal text-white mb-4 max-w-4xl"
+            className="text-2xl sm:text-4xl font-normal text-white mb-4 max-w-4xl"
           >
             ETT URVAL AV LUMINOS ENERGIS SLUTFÖRDA PROJEKT
           </h2>
-          <p data-aos="fade-down" className="text-2xl font-medium text-white">
+          <p
+            data-aos="fade-down"
+            className="text-xl sm:text-2xl font-medium text-white"
+          >
             Våra referensprojekt
           </p>
         </section>
 
-        <div className="container mx-auto p-8">
-          <p className=" mb-8" data-aos="fade-up">
+        <div className="container mx-auto px-4 sm:px-8">
+          <p className="mb-8 text-sm sm:text-base" data-aos="fade-up">
             Luminos Energi har stor erfarenhet av olika typer av projekt
             innefattande solceller och batterilager. Nedan följer ett axplock av
             våra slutförda projekt.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
               <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <ProjectCard {...project} />

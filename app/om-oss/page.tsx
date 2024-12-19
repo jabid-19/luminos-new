@@ -20,8 +20,6 @@ export default function ModernAboutUs() {
         className="relative bg-cover bg-center md:h-[600px] flex items-center justify-center overflow-hidden"
         style={{ backgroundImage: "url('/images/about.jpg')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20"></div>
-
         <div className="relative z-10 text-center text-white">
           <h1 className="text-6xl font-normal mb-4" data-aos="fade-down">
             Om Luminos Energi
